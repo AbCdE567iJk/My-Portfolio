@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-pic {
+            width: 300px;
+            height: 275px;
+            border-radius: 50%;
+            border: 5px solid rgb(211, 211, 211);
+            display: block;
+            margin: 20px auto;
+        }
+        .btn-custom {
+            border-radius: 30px;
+            color: rgb(45, 104, 255);
+            display: block;
+            margin: 20px auto;
+        }
+        /* Styling for the About Me and Skills container */
+        .about-container {
+            color: black;
+            padding: 40px;
+            border-radius: 15px;
+            /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+        }
+        .skills-container {
+            display: flex;
+            justify-content: flex-start;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 50px;
+            margin: 15px auto;
+        }
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+        .overlay a {
+            color: white;
+            font-size: 24px;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .contact-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 450px;  /* Slightly wider */
+    text-align: start;
+    justify-content: start;
+    margin-left: 35%;
+}
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Button */
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    width: 150px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Button Hover */
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .contact-container {
+        width: 90%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><b>My Portfolio</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact_me">Contact</a></li>
+          <a class="navbar-brand" href="https://www.linkedin.com/in/vishnu-sai-satwik-40606124b/">
+            <img src="linkedin.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          </a>
+          <a class="navbar-brand" href="https://github.com/AbCdE567iJk">
+            <img src="github.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          </a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5" style="background: linear-gradient(to right, #3b82f6, #9333ea); color: white; text-align: center;">
+    <div class="container">
+      <h1 style="font-size: 50px; padding-top: 70px;"><b>Hello, I'm Vishnu Sai Satwik</b></h1>
+      <p>“Building Easy2Ride | Crafting scalable and Interactive Apps | Designing Engaging UI for mobile & web..”</p><br>
+      <img src="picture.jpg" alt="Profile Picture" class="profile-pic">
+      <!-- <button class="btn btn-light btn-lg btn-custom" style="width: 13%;" ><b>My Work..</b></button> -->
+      <form action="#projects">
+        <button type="submit" class="btn btn-light btn-lg btn-custom" style="width: 15%;">
+          <b>View My Work..</b>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section id="about" style="background-color: rgb(255, 255, 255);">
+    <div class="about-container">
+        <h1 class="text-center"><b>About Me</b></h1>
+        
+        <div class="skills-container" style="padding-top: 5%;">
+
+            <div class="image-container">
+
+                <img alt="A collage of various projects and code snippets" class="rounded-lg shadow-lg" height="500" src="https://storage.googleapis.com/a1aa/image/kUgpJCr9yQyNJvs-gwThFqvLccF3GVUXnPM76Z4FVyc.jpg" width="550" style="border-radius: 12px;"/>
+
+            </div>
+            
+            <div style="margin-left: 10%; margin-top: 7%;">
+
+                <p class="text-center" style="font-weight: 700;">I am pursuing an undergraduate Computer Science and Engineering (CSE) degree at Lovely Professional University, Phagwara, Punjab.
+
+                  I have been very interested in computers since my childhood. As I have a technical background, I am good at UI design. I created a few designs for Mobile & Web Applications. I am learning some programming skills like Java, Kotlin. I am aiming to learn some specialized skills in Android development and software development, and I am also very interested in entrepreneurship.
+      
+                  My hobbies are traveling, riding bikes, driving cars, food, and playing chess.
+              </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section style="background-color: rgb(236, 238, 239);" id="skills">
+  <div class="SKILLS text-center" style="padding-top: 50px;"><h1><b>Skills</b></h1></div>
+
+  <div class="container mt-5" style="padding-bottom: 3%;">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card p-4">
+                <img src="html_css.png" alt="HTML & CSS">
+                <h5 class="card-title">HTML & CSS</h5>
+                <p class="card-text">Proficient in creating responsive and accessible web pages using HTML5 and CSS3.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-4">
+                <img src="bootstrap.png" alt="JavaScript">
+                <h5 class="card-title">Bootstrap</h5>
+                <p class="card-text">Experienced in writing clean and efficient code for dynamic web applications.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-4">
+                <img src="uiux.png" alt="React">
+                <h5 class="card-title">UI/UX</h5>
+                <p class="card-text">Skilled in building interactive user interfaces using UI/UX</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-4">
+                <img src="java.png" alt="Java">
+                <h5 class="card-title">Java</h5>
+                <p class="card-text">Experienced in building various projects & challenges using Java. </p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-4">
+                <img src="kotlin.png" alt="Databases">
+                <h5 class="card-title">Kotlin</h5>
+                <p class="card-text">Proficient in creating mobile-first, responsive web designs using modern CSS frameworks.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-4">
+                <img src="sql.png" alt="Responsive Design">
+                <h5 class="card-title">SQL</h5>
+                <p class="card-text">Knowledgeable in working with SQL and NoSQL databases like MySQL and MongoDB.</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="projects">
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Projects</h2>
+    <div class="row g-4">
+        <!-- Project Card -->
+        <div class="col-md-4">
+            <div class="card project-card">
+                <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                <div class="overlay">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-figma"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-video"></i></a>
+
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Easy2Ride Mobile UI Design</h5>
+                    <p class="card-text">Designed a fully UI for mobile application to make a connection between rider's.</p>
+                    <p><strong>Skills Used:</strong> UI Design, Wireframing</p>
+                    <p><strong>Tools Used:</strong> Figma</p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card project-card">
+                <img src="project2.png" class="card-img-top" alt="Project 2">
+                <div class="overlay">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-figma"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-video"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Beauty Parlour Web UI Design</h5>
+                    <p class="card-text">Created a fully front-end web design for women Beauty parlour website.</p>
+                    <p><strong>Skills Used:</strong> UI Design, Wireframing</p>
+                    <p><strong>Tools Used:</strong> Figma </p>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat for more projects -->
+
+        
+        <div class="col-md-4">
+            <div class="card project-card">
+                <img src="project3.png" class="card-img-top" alt="Project 3">
+                <div class="overlay">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-figma"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-video"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Portfolio Web UI Design</h5>
+                    <p class="card-text">Designed a portfolio web UI for myself to show up my skills and to improve my network.</p>
+                    <p><strong>Skills Used:</strong> UI Design, Wireframing</p>
+                    <p><strong>Tools Used:</strong> Figma</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card project-card">
+                <img src="project2.png" class="card-img-top" alt="Project 4">
+                <div class="overlay">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-figma"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-video"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Beauty Parlour front-end Website</h5>
+                    <p class="card-text">Developed from UI Design to front-end website which makes easy to connect customers for women beauty palrour.</p>
+                    <p><strong>Skills Used:</strong> HTML5, CSS, JavaScript, Bootstrap</p>
+                    <p><strong>Tools Used:</strong> VS Code, Bootstrap</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card project-card">
+                <img src="project1.jpg" class="card-img-top" alt="Project 5">
+                <div class="overlay">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-figma"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-video"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Easy2Ride Mobile Application</h5>
+                    <p class="card-text">Developing a mobile application (Ongoing) which makes easy to connect bike riders while traveling to trips and event booking.</p>
+                    <p><strong>Skills Used:</strong> Kotlin Programming</p>
+                    <p><strong>Tools Used:</strong> Android Studio</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card project-card">
+                <img src="project3.png" class="card-img-top" alt="Project 6">
+                <div class="overlay">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-figma"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-video"></i></a>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Portfolio Website</h5>
+                    <p class="card-text">Developing a portfolio (Ongoing) to showcase my skills to the interviewers & to improve good networking.</p>
+                    <p><strong>Skills Used:</strong> HTML5, CSS, Bootstrap</p>
+                    <p><strong>Tools Used:</strong> VS Code, Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<section style="background-color:rgb(231, 231, 231); padding-top: 50px; padding-bottom: 50px;" id="contact_me">
+    <div class="text-center">
+        <h1><b>Contact Me:</b></h1>
+        <p>Feel free to reach out to me for any inquiries or interviewers..</p>
+    </div>
+    <br>
+    <div class="contact-container">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="name@example.com">
+            </div>
+
+            <div class="form-group" >
+                <label for="message">Description</label>
+                <textarea id="message" rows="3" placeholder="Enter your message"></textarea>
+            </div>
+
+            <div class="btn-container" style="padding-top: 30px;">
+                <input type="submit" class="submit-btn" value="Send">
+            </div>
+        </form>
+    </div>
+
+</section>
+</body>
+</html>
